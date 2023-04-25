@@ -68,8 +68,16 @@ onMounted(() => {
       @input="handleInput" 
       type="text"
       />
-      
+      <button type="submit">Search</button>
     </form>
+    <div class="results" v-if="search_results.length > 0">
+      <div class="result" v-for="anime in search_results">
+        <img :src="anime.images.jpg.image_url" alt="Anime image">
+        <div class="details">
+          <h3>{{ anime.title }}</h3>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
