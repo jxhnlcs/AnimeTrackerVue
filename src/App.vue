@@ -3,7 +3,7 @@
 import { ref, computed, onMounted }from 'vue'
 
 const query = ref('')
-const my_anime = ref('')
+const my_anime = ref([])
 const search_results = ref([])
 
 const my_anime_asc = computed(() =>{
