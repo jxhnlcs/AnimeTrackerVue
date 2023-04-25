@@ -39,13 +39,37 @@ const addAnime = anime => {
     watched_epidodes: 0
   })
 
-  localStorage.setTime('my anime', JSON.stringify(my_anime.value))
+  localStorage.setItem('my anime', JSON.stringify(my_anime.value))
 }
 
+const increaseWatch = anime => {
+  anime.watched_epidodes++
+  localStorage.setItem('my anime', JSON.stringify(my_anime.value))
+}
+
+const decreaseWatch = anime => {
+  anime.watched_epidodes--
+  localStorage.setItem('my anime', JSON.stringify(my_anime.value))
+}
+onMounted(() => {
+  my_anime.value = JSON.prse(localStorage.getItem('my_anime')) || []
+})
 
 </script>
 
 <template>
-  <main>Hello world</main>
+  <main>
+    <h1>My Anime Tracker</h1>
+
+    <form @submit.prevent="searchAnime">
+      <input 
+      placeholder="Pesquise por um anime..." 
+      v-model="query" 
+      @input="handleInput" 
+      type="text"
+      />
+      
+    </form>
+  </main>
 </template>
 
