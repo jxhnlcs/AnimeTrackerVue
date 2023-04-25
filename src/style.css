@@ -48,7 +48,7 @@ form input {
 
 	display: block;
 	padding: 0.5rem 1rem;
-	background-image: linear-gradient(to right, deeppink 50%, darkviolet 50%);
+	background-image: linear-gradient(to right, rgb(58, 182, 240) 50%, rgb(32, 15, 128) 50%);
 	background-size: 200%;
 	color: white;
 	font-size: 1.125rem;
